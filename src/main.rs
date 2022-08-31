@@ -5,7 +5,15 @@ use uwuifier::uwuify_str_sse;
 
 fn main() {
     let args: Vec<String> = std::env::args().collect();
-    // if args[1] == "cake" { cake_generator(args[2].parse().expect("not an int")); }
+
+    if args[1] == "cake" { 
+
+        let layers:i32 = match args[2].parse() {
+            Err( _ ) => 1,
+            Ok( result ) => result
+        };
+        cake_generator( layers );
+    }
 
 
     let listener = TcpListener::bind("127.0.0.1:8081").unwrap();
