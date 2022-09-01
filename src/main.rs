@@ -12,7 +12,8 @@ fn main() {
             Err( _ ) => 1,
             Ok( result ) => result
         };
-        cake_generator( layers );
+        // cake_generator( layers );
+        println!( "{}", layers )
     }
 
 
